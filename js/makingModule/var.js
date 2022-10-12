@@ -14,3 +14,30 @@ module.exports = {
 // JS식
 // export default { odd, even };
 
+
+// 좀더 예쁘게 생략도 가능
+/**
+    exports.odd = odd;
+    exports.even = even;
+ */
+
+
+
+// 근데 이건 안됨
+/**
+ * 
+    
+    // X
+    exports.odd = odd;
+    exports.even = even;
+    // 위에 선언해놓고 밑에서 또 이렇게 넣으면 안된다.
+    module.exports = {새로운 객체}
+
+
+    exports.keyword = value; 를 사용하기 시작했으면 계속 이걸로 사용해야 한다.
+    이거 사용하다가 밑에서 
+    module.exports = 어쩌구; 쓰지 말라. 같이 쓸 수 없다! ****
+
+
+
+ */
