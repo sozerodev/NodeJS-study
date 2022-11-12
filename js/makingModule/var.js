@@ -41,3 +41,11 @@ module.exports = {
 
 
  */
+
+
+// this가 module.exports와 동일하기 때문에
+// this.odd = odd;
+// this.even = even;
+
+// 이런 식으로 사용도 가능하다.
+// 하지만 헷갈리니 이렇겐 잘 안 쓴다.

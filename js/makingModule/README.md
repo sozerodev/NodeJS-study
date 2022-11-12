@@ -55,11 +55,27 @@ import { odd, even } from './var';
 ```
 
 
-### 단...
+### 단... (export와 this 강의 참고)
 - require와 import가 1대1로 대응되진 않음. 동작이 살짝 다름.
 - export default와 module.exports도 동작이 다름.
 - 대부분은 바꾸면 그대로 바꿔지나... 안바꿔지는 것도 있으니 주의.
 - 노드 16버전되면 거의 그대로 들어올 수도 있으나... 
 - 아무튼 완전 같은 것은 아님에 주의
 
+### `module.exports`, `exports.keyword = value`
+- 둘 중 하나만 써야지 둘 다 쓸 수는 없다.
+```javascript
+exports.odd = odd;
+exports.even = even;
 
+
+// 위에 이렇게 선언해버렸다면 밑에 이렇게 사용은 안됨
+module.exports = {
+    odd,
+    even
+}
+
+// 두 가지 방식 중 하나만 사용해야 한다.
+```
+- 보통 하나를 리턴할 때에는 `module.exports` 
+- 두개 이상을 리턴할 때에는 `exports.key = value`
